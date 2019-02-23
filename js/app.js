@@ -3,6 +3,10 @@
 // 1. The Greatest Thing Since Sliced Bread 
 // Find the onclick event in the h3 element and create a function that will italicize the contents and change the font color to cornflowerblue in the div id of 'bread'.
 
+function italics() {
+    bread.style.color = 'cornflowerblue';
+    bread.style.fontStyle = 'italic';
+}
 
 
 // 2. The Birth of the Internet
@@ -10,7 +14,9 @@
 
 var webContents = 'The Internet got its start in the United States more than 50 years ago as a government weapon in the Cold War. In the 1980s, research at CERN in Switzerland by British computer scientist Tim Berners-Lee resulted in the World Wide Web, linking hypertext documents into an information system, accessible from any node on the network.';
 
-
+function changeContent() {
+    webby.innerHTML = webContents;
+}
 
 // 3. The Boxer Rebellion
 // Find the onclick event in div id of 'fightDaPower' and create a function that will convert the Chinese text in the same div element into English (the English content is provided below).
@@ -61,3 +67,21 @@ var classics = ["Charlotte's Web", "War and Peace", "The Secret", "How to Win Fr
 // Final Boss
 // Add event listeners for the thumbs up and thumbs down images that will count the number of times the thumb has been clicked on. 
 
+var like = document.getElementsByClassName('fas fa-thumbs-up');
+
+var dislike = document.getElementsByClassName('fas fa-thumbs-down');
+
+for(var i = 0; i < like.length; i++) {
+    like[i].addEventListener('click', increase);
+    dislike[i].addEventListener('click', decrease);
+}
+
+function increase() {
+   var likesAmt = this.querySelectorAll('.up')[0];
+   likesAmt.innerHTML++;
+}
+
+function decrease() {
+    var dislikesAmt = this.querySelectorAll('.down')[0];
+    dislikesAmt.innerHTML++;
+ }
