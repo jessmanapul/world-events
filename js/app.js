@@ -40,7 +40,15 @@ function showDepress() {
 // 5. Apollo 11
 // Add an event listener to the h3 element id of 'blastOff' and create a function to show and hide the contents in the div element of 'moonWalk' after clicking on Apollo 11.
 
+blastOff.addEventListener('click', showMoon);
 
+function showMoon() {
+    if (moonWalk.style.display === 'none') {
+        moonWalk.style.display = 'block';
+    } else {
+        moonWalk.style.display = 'none';
+    }
+}
 
 // 6. The American Civil War
 // Add an event listener to the div element id of 'freedom' and create a function to remove all instances of 'corn' in the content.
@@ -84,11 +92,13 @@ for(var i = 0; i < like.length; i++) {
 }
 
 function increase() {
-   var likesAmt = this.querySelectorAll('.up')[0];
+   //var likesAmt = this.querySelectorAll('.up')[0];
+   var likesAmt = this.querySelector('.up');
    likesAmt.innerHTML++;
 }
 
 function decrease() {
-    var dislikesAmt = this.querySelectorAll('.down')[0];
+    //var dislikesAmt = this.querySelectorAll('.down')[0];
+    var dislikesAmt = this.querySelector('.down');
     dislikesAmt.innerHTML++;
  }
